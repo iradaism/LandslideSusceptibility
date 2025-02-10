@@ -48,7 +48,7 @@ Set the correct working directory and import the data. Note in this
 tutorial we will only use **sp** package for working with shapefiles.
 
 ``` r
-setwd("C:/GIS_for_env_applications/susceptibility")
+setwd("susceptibility")
 ```
 
 ``` r
@@ -85,7 +85,7 @@ landslides <- shapefile("landslides_training.shp")
 In order to find out landslide susceptible areas, we will follow the
 steps shown in the flowchart below.
 
-<img src="workflow.png" style="width:75.0%" />
+<img src="res/workflow.png" style="width:75.0%" />
 
 Using DEM and previously learned skills, calculate slope. Slope will be
 additional parameter involved into analysis.
@@ -111,7 +111,7 @@ As always, check how the stacked layer looks like by plotting it.
 #plot(rasStack)
 ```
 
-<img src="stack.png" style="width:75.0%" />
+<img src="res/stack.png" style="width:75.0%" />
 
 For building classification model using all the variables, we have to
 extract values of these variables for landslide/no landslide locations.
@@ -278,7 +278,7 @@ imp <- varImp(rf_default)
 plot(imp)
 ```
 
-<img src="importance.png" style="width:75.0%" />
+<img src="res/importance.png" style="width:75.0%" />
 
 If you are satisfied with the accuracy of the model, you can use the
 trained model and make prediction to the whole study area.
@@ -296,4 +296,4 @@ plot(prediction)
 rst <- writeRaster(prediction,"susceptibleAreas_areas.tif")
 ```
 
-<img src="output.png" style="width:75.0%" />
+<img src="res/output.png" style="width:75.0%" />
